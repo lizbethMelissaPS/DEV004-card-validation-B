@@ -1,8 +1,8 @@
 const validator = {
   // ...
+
   isValid: function (cardNumber) {
     const reverseNumber = cardNumber.split('').reverse();
-    console.log('reverseNumber: ' + reverseNumber);
     //dobla segundo digito par
     const doblarDigito = [];
     for (let i = 0; i < reverseNumber.length; i++) {
@@ -11,7 +11,7 @@ const validator = {
     }
     console.log('doblarDigito: ' + doblarDigito);
     //suma de digito
-    const sumarDigitos = []; 
+    const sumarDigitos = [];
     for (let i = 0; i < doblarDigito.length; i++) {
       if (doblarDigito[i] > 9) {
         const arrayDigito = doblarDigito[i].toString().split('');
@@ -26,23 +26,25 @@ const validator = {
     }
     console.log('sumarDigitos: ' + sumarDigitos);
     //suma final
-    const sumaFinal=sumarDigitos.reduce((a, b) => a + b);
+    const sumaFinal = sumarDigitos.reduce((a, b) => parseInt(a) + parseInt(b));
     console.log('sumaFinal: ' + sumaFinal);
     return (sumaFinal % 10 === 0) ? true : false;
-    
+
   },
   maskify: function (cardNumber) {
-    console.log('cardNumber: '+ typeof cardNumber + cardNumber);
-    //reemplazar
-    const str = cardNumber.slice(0, -4);
-    console.log('str: '+ str);
-    const strRemplazado=cardNumber.replace(str,'*');
-    console.log('strRemplazado: '+ strRemplazado);
-    
+    //reemplazar 
+    /*El método fill() trabaja con array
+    cambia todos los elementos en un arreglo por un valor estático,
+     desde el índice start (por defecto 0) hasta el índice end (por defecto array.length). 
+     Devuelve el arreglo modificado*/
+    const arrRemplace=cardNumber.split('').fill('#',0,-4);
+    let remplas = ('');
+    for (let i = 0; i < arrRemplace.length; i++) {
+      remplas+=(arrRemplace[i]);
+    }
+    return remplas;
   }
 }
-/*
-validator.isValid(creditCardNumber)
-validator.maskify(creditCardNumber)*/
+
 
 export default validator;
