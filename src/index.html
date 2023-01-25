@@ -8,11 +8,18 @@
   <body>
     <header></header>
     <main>
-      <form action="">
-        <label for="">Ingresa el numero de tarjeta</label>
-        <input type="text" name="numberTarjeta" id="idtarjeta" maxlength="13" onkeypress="return (event.keyCode >= 48) && (event.keyCode <= 57)">
-        <button id="btnEnviar" >Enviar</button>
-      </form>
+      <div>
+        <form class="formulario">
+          <label for="">Ingresa el numero de tarjeta</label>
+          <br>
+          <input type="text" name="numberTarjeta" id="idtarjeta" maxlength="13" placeholder="ej: 1234567890987"  >
+          <br>
+          <button id="btnEnviar" >Enviar</button>
+        </form>
+        <div id="result"></div>
+      </div>
+      
+      
     </main>
     <footer></footer>
     <script src="index.js" type="module"></script>

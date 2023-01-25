@@ -2,26 +2,37 @@ import validator from './validator.js';
 
 console.log(validator);
 
-/* const soloNumero = document.getElementById('idtarjeta');
-const valortecla = this.value.keyCode;
-console.log("valortecla: " + valortecla);
-soloNumero.addEventListener("onkeypress", function (event) {
-    console.log("soloNumero: " + soloNumero);
-    return (event.keyCode >= 48) && (event.keyCode <= 57)
-    
-})
- */
-const numero = document.getElementById('idtarjeta');
-console.log("numero: " + numero);
 /*onkeyup HTML event: evento que se dispara cuando se "suelta" una tecla,
  momento donde te interesa obtener el valor del input.
 DOM addEventListener: posibilidad de bindear eventos a elementos del DOM
 */
-numero.addEventListener("keyup", function () {
-    const valor = this.value;
-    console.log("numero: " + valor);
-    validator.isValid(valor);
-    validator.maskify(valor);
+
+
+document.addEventListener("submit", function btnEnviar () {///obj.metodo(prope)
+    
+  const numero = document.getElementById('idtarjeta').value;
+  /*  */
+  /* function validate() {
+    document.getElementById("result").innerHTML = /[^0-9-\s]+/.test(numero) ? true : 'solo numeros';
+  }
+  validate();
+  document.addEventListener('keyup', validate);
+ */
+  /*  */
+  if (numero) {
+    console.log("numero: " + numero);
+    const soloNumeros =document.getElementById("result").alert = /[0-9]+/.test(numero) ? true : alert('Ingrese solo numeros') ;
+    if(soloNumeros){
+      validator.isValid(numero);
+      validator.maskify(numero);
+    }
+  } else {
+    console.log('false: ');
+    
+    alert("Ingresar numero de tarjeta");
+  }
+  
 })
-//invocar
+
+
 
