@@ -3,16 +3,6 @@ const validator = {
 
   isValid: function (cardNumber) {
     const reverseNumber = cardNumber.split('').reverse();
-    /* if (reverseNumber !=='') {
-      console.log('true: ');
-      alert("lleno");
-      
-    } else {
-      console.log('false: ');
-      alert("vacio");
-      
-    } */
-    
     //dobla segundo digito par
     const doblarDigito = [];
     for (let i = 0; i < reverseNumber.length; i++) {
@@ -41,12 +31,10 @@ const validator = {
     console.log("final:  "+(sumaFinal % 10 === 0) ? true : false); 
 
     if (sumaFinal % 10 === 0  ) {
-      console.log('true: ');
-      alert("Número de tarjeta correcto" , this.maskify);
+      return true;
     } else {
-      console.log('false: ');
-      alert("Número de tarjeta es incorrecto");
-    }
+      return false;
+    } 
   },
   maskify: function (cardNumber) {
     //reemplazar 
