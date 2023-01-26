@@ -1,0 +1,39 @@
+body {
+    background-color: #ffdd90;
+    background-image: url("https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1095.jpg?w=2000");
+}
+
+.formulario {
+    font-family: fantasy;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    position: absolute;
+    margin: 100px 450px;
+    
+    width: 350px;
+    background: linear-gradient(90deg, #97dff7 0%, #394d60 100%);
+    opacity: 0.8;
+}
+label{
+    padding-bottom: 10%;
+}
+#btnEnviar{
+    background-color: rgb(50, 144, 233);
+    border-color:cornflowerblue;
+    border-radius: 8px;
+}
+
+#idtarjeta,button {
+    border-color: aqua;
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 10px;
+    background-position: center;
+    margin: 20px 4px;
+    color: rgb(24, 20, 20);
+    
+    
+}
