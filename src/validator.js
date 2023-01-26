@@ -1,6 +1,5 @@
 const validator = {
-  // ...
-
+ 
   isValid: function (cardNumber) {
     const reverseNumber = cardNumber.split('').reverse();
     //dobla segundo digito par
